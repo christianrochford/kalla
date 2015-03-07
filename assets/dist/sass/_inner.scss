@@ -1,0 +1,134 @@
+.inner{
+	#banner-wrap{
+		background-size: cover !important;
+		background-position: center top !important;
+		background-repeat: no-repeat !important;
+		padding-top: 130px;
+		width: 100%;
+		height: 360px;
+		text-align: center;
+		position: relative;
+		@include transition(all .2s ease-in-out);
+		@include breakpoint(mobile-landscape){
+			padding-top: 110px;
+			height: 300px;
+		}
+		#banner{
+			width: 100%;
+			max-width: 62.5em;
+			float: left;
+			margin: 20px auto;
+			display: table;
+			float: none;
+			position: relative;
+			z-index: 1;
+			h1{
+				color: $primary;
+				margin: 15px 0px 32px;
+				padding: 0 30px;
+				display: table-cell;
+				height: 180px;
+				vertical-align: middle;
+				text-align: center;
+			}
+		}
+		#gradient{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: transparent; /* Old browsers */
+			background: -moz-linear-gradient(top, transparent 2%, $white 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,transparent), color-stop(100%,$white)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top, transparent 2%,$white 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top, transparent 2%,$white 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top, transparent 2%,$white 100%); /* IE10+ */
+			background: linear-gradient(to bottom, transparent 2%,$white 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='transparent', endColorstr='$white',GradientType=0 ); /* IE6-9 */
+		}
+	}
+	#main-content.row{
+		width: 100%;
+		max-width: 1280px;
+		margin: 0 auto;
+	}
+	#article-wrap{
+		width: 100%;
+		display: inline-block
+	}
+	#article-content{
+		background: $background;
+		margin: 15px 0 20px;
+		float: left;
+		@include breakpoint(tablet){
+			width: 100%;
+			margin-bottom: 0;
+		}
+		ul,ol{
+			margin-left: 20px;
+			li{
+				font-family: $text;
+				padding-left: 1em; 
+    			text-indent: -.7em;
+    			color: $primary;
+    			font-weight: lighter;
+    			position: relative;
+			}
+		}
+		ol{
+			list-style-type: decimal;
+			margin-left: 28px;
+		}
+		ul li:before{
+			content: '•';
+			color: $primary;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		pre{
+			background: $primary;
+			color: $white;
+			margin: 20px 0;
+			padding: 20px;
+			overflow: scroll;
+		}
+	}
+	#article-content.eight{
+		width: 66.666%;
+	}
+	#sidebar{
+		width: 33.333%;
+		float: left;
+		padding-left: 50px;
+		margin-top: 50px;
+		@include breakpoint(tablet){
+			width: 100%;
+			padding-left: 10px;
+			margin-top: 0;
+		}
+		h4{
+			margin-bottom: 5px;
+			&:nth-of-type(2){
+				@include breakpoint(tablet){
+					margin-top: 20px;
+				}
+			}
+		}
+		ul{
+			margin-left: 20px;
+			display: inline-block;
+			height: auto;
+			@include breakpoint(tablet){
+				margin-left: 0;
+				margin-bottom: 20px;
+				li{
+					width: 50%;
+					float: left;
+				}
+			}
+		}
+	}
+}
+

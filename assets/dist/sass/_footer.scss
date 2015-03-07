@@ -1,0 +1,97 @@
+footer{
+	background: $primary;
+	width: 100%;
+	padding: 20px 20px 0 20px;
+	margin-top: 50px;
+	@extend %clearfix;
+	#terms{
+		width: 50%;
+		float: left;
+		text-align: left;
+		@include breakpoint(mobile-landscape){
+			width: 100%;
+			text-align: center;
+		}
+		a{
+			color: $white;
+			font-family: $headings;
+			font-size: 14px;
+			font-weight: lighter;
+		}
+	}
+	#social{
+		width: 50%;
+		float: left;
+		text-align: right;
+		@include breakpoint(mobile-landscape){
+			width: 100%;
+			text-align: center;
+		}
+		li{
+			display: inline-block;
+			margin: 0 20px;
+			a{
+				color: $white;
+			}
+		}
+	}
+	#legal{
+		width: 50%;
+		float: left;
+		li{
+			color: $white;
+			font-family: $headings;
+			display: inline-block;
+			font-size: 14px;
+			font-weight: lighter;
+			@include transition(all .2s ease-in-out);
+			@include breakpoint(mobile-landscape){
+				font-size: 12px;
+			}
+		}
+	}
+	#postroch{
+		color: $white;
+		font-size: 14px;
+		text-align: right;
+		font-family: $headings;
+		text-transform: lowercase;
+		width: 50%;
+		float: left;
+		a{
+			color: $white;
+			font-family: $headings;
+			font-size: 14px;
+			text-transform: uppercase;
+			@include breakpoint(mobile-landscape){
+				font-size: 12px;
+			}
+		}
+	}
+	#terms a, #social a, #postroch a{
+		position: relative;
+		padding-bottom: 8px;
+		box-sizing: border-box;
+		&:after{
+			position: absolute;
+			top: 100%;
+			left: 0px;
+			width: 100%;
+			height: 2px;
+			background: $white;
+			background: $white-opaque;
+			content: "";
+			opacity: 0;
+			@include transition(all .2s ease-in-out);
+			transform: translateY(10px);
+		}
+		&:hover, &:focus, &:active{
+			&:after{
+				opacity: 1;
+				-webkit-transform: translateY(0px);
+				-moz-transform: translateY(0px);
+				transform: translateY(0px);
+			}
+		}
+	}
+}
