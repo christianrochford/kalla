@@ -15,10 +15,14 @@
 		height: 100%;
 	}
 	#intro{
-		padding: 150px 10px 20px 10px;
+		padding: 200px 10px 20px 10px;
 		position: relative;
-		width: 80%;
-		margin: 0 10%;
+		width: 700px;
+		margin: 0 auto;
+		@include breakpoint(tablet){
+			margin: 0 10%;
+			width: 80%;
+		}
 		p{
 			color: $black;
 			font-family: $headings;
@@ -27,6 +31,9 @@
 		}
 		#cta{
 			display: none;
+			a{
+				font-family: $headings;
+			}
 		}
 	}
 }

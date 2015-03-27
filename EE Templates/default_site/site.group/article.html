@@ -1,0 +1,40 @@
+{exp:channel:entries channel="literatur" limit="1" disable="{gv_disable_all}"}
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<html lang="en">
+{embed="embeds/head"}
+<body class="inner">
+
+	<div class="wrapper">
+
+{embed="embeds/header"}
+    
+    {if banner_image_literatur}
+    <div id="banner-wrap" style="background: url('{banner_image_literatur}');">
+    {if:else}
+    <div id="banner-wrap" style="background: url('{site_url}img/lobby.jpg');">
+    {/if}
+      <div id="banner" class="twelve columns detail">
+        <h1>{title}</h1>
+      </div>
+      <div id="gradient"></div>
+    </div>
+
+    <div id="main-content" class="row">
+        <div id="article-content" class="twelve columns">
+          <h2>{title}</h2>
+          <h4>by {authors}, {year_of_publication}</h4>
+          {original_entry}
+        </div>
+    </div>
+  </div>
+
+{embed="embeds/footer"}
+
+</body>
+</html>
+{/exp:channel:entries}

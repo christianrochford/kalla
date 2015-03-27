@@ -1,0 +1,54 @@
+{exp:channel:entries channel="inner" limit="1" disable="{gv_disable_all}"}
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<html lang="en">
+{embed="embeds/head"}
+<body class="inner {segment_1}">
+
+	<div class="wrapper">
+
+{embed="embeds/header"}
+    
+    {if banner_image}
+    <div id="banner-wrap" style="background: url('{banner_image}');">
+    {if:else}
+    <div id="banner-wrap" style="background: url('{site_url}img/lobby.jpg');">
+    {/if}
+      <div id="banner" class="twelve columns detail">
+        <h1>{title}</h1>
+      </div>
+      <div id="gradient"></div>
+    </div>
+
+  {if '{segment_1}' == 'angebot' && !segment_2}
+  <div id="main-content" class="row">
+        <div id="article-content" class="twelve columns">
+          {main_content}
+          {/exp:channel:entries}
+        </div>
+        <ul id="services">
+          {exp:channel:entries channel="angebot" dynamic="off" disable="{gv_disable_all}"}
+          <li style="background: url('{grid_image_angebot}');"><a href="{page_url}">{title}</a></li>
+          {/exp:channel:entries}
+        </ul>
+        {exp:structure:nav css_id="services" start_from="/angebot" max_depth="1"}
+    </div>
+  </div>
+  {if:else}
+    <div id="main-content" class="row">
+        <div id="article-content" class="twelve columns">
+          {main_content}
+        </div>
+    </div>
+  </div>
+  {/exp:channel:entries}
+  {/if}
+
+{embed="embeds/footer"}
+
+</body>
+</html>

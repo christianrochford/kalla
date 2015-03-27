@@ -22,16 +22,7 @@ header{
     		color: $primary;
     	}
 		h1{
-			color: $black;
-			font-size: 26px;
-			font-family: $headings;
-			line-height: 30px;
-			margin: 8px 0 0;
-			padding: 0 0 0 52px;
-			text-transform: lowercase;
-			position: absolute;
-			top: -5px;
-			right: 0;
+			text-indent: -10000px;
 		}
 	}
 	#menu{

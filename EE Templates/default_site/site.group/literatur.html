@@ -1,0 +1,58 @@
+{exp:channel:entries channel="inner" limit="1" disable="{gv_disable_all}"}
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<html lang="en">
+<head>
+{embed="embeds/head"}
+</head>
+<body class="inner literatur">
+
+	<div class="wrapper">
+
+{embed="embeds/header"}
+    
+    {if banner_image}
+    <div id="banner-wrap" style="background: url('{banner_image}');">
+    {if:else}
+    <div id="banner-wrap" style="background: url('{site_url}img/library.jpg');">
+    {/if}
+      <div id="banner" class="twelve columns detail">
+        <h1>{title}</h1>
+      </div>
+      <div id="gradient"></div>
+    </div>
+
+		<div id="main-content" class="row">
+        <section id="article-content" class="twelve columns">
+          {main_content}
+          {/exp:channel:entries}
+          {exp:channel:entries channel="literatur" dynamic="no" disable="{gv_disable_all}"}
+          {if link}
+          <article>
+            <p class="title">{title}</p>
+            <p class="authors">{authors} <span class="year">{year_of_publication}</span>. <a href="{link}" target="_blank">Hyperlink</a></p>
+          </article>
+          {if:elseif document}
+          <article>
+            <p class="title">{title}</p>
+            <p class="authors">{authors} <span class="year">{year_of_publication}</span>. <a href="{document}" class="icon-download" aria-hidden="true" target="_blank"></a></p>
+          </article>
+          {if:elseif original_entry}
+          <article>
+            <p class="title">{title}</p>
+            <p class="authors">{authors} <span class="year">{year_of_publication}</span>. <a href="{page_url}">Read More</a></p>
+          </article>
+          {/if}
+          {/exp:channel:entries}
+        </section>
+		</div>
+	</div>
+
+{embed="embeds/footer"}
+
+</body>
+</html>

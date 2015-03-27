@@ -1,0 +1,45 @@
+{exp:channel:entries channel="inner" limit="1" disable="{gv_disable_all}"}
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<html lang="en">
+{embed="embeds/head"}
+<body class="inner contact">
+
+	<div class="wrapper">
+
+{embed="embeds/header"}
+
+		{if banner_image}
+	    <div id="banner-wrap" style="background: url('{banner_image}');">
+	    {if:else}
+	    <div id="banner-wrap" style="background: url('{site_url}img/lobby.jpg');">
+	    {/if}
+	      <div id="banner" class="twelve columns detail">
+	        <h1>{title}</h1>
+	      </div>
+	      <div id="gradient"></div>
+	    </div>
+
+		<div class="row">
+			<div class="columns twelve">
+				{if main_content}<p>{main_content}</p>{/if}
+				{exp:freeform:form form_name="contact" return="kontakt/danke" required="name|email|message" inline_errors="yes"}
+					<input type="text" name="name" {if freeform:error:name}placeholder="Please enter your name"{if:else}placeholder="Name"{/if}>
+					<input type="email" name="email" {if freeform:error:email}placeholder="Please enter a valid email address"{if:else}placeholder="Email"{/if}>
+					<textarea name="message" cols="30" rows="10" {if freeform:error:message}placeholder="Please enter a message"{if:else}placeholder="Message"{/if}></textarea>
+					<input type="submit" value="Send">
+				{/exp:freeform:form} 
+			</div>
+		</div>
+
+	</div>
+
+{embed="embeds/footer"}
+
+</body>
+</html>
+{/exp:channel:entries}
