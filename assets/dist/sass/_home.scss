@@ -23,6 +23,9 @@
 			margin: 0 10%;
 			width: 80%;
 		}
+		@include breakpoint(mobile-landscape){
+			padding: 170px 10px 20px 10px;
+		}
 		p{
 			color: $black;
 			font-family: $headings;
@@ -31,6 +34,11 @@
 		}
 		#cta{
 			display: none;
+			@include breakpoint(mobile-landscape){
+				background: rgba(255,255,255,0.5);
+				padding: 10px;
+				height: auto;
+			}
 			a{
 				font-family: $headings;
 			}
